@@ -1,0 +1,23 @@
+Creamos el servidor UBUNTU en AWS:
+sudo apt update
+sudo apt upgrade
+sudo apt install mysql-server
+sudo su
+passwd root -> poner seguridad a nuestro usuario
+	colocamos la contraseña '1234'
+	exit -> salir
+sudo mysql_secure_installation -> aplicar seguridad al serveer mysql
+	N
+	Y
+	N
+	Y
+	Y
+sudo mysql -u root ->accedemos al MySQL
+	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '123456';
+	flush privileges;
+	exit
+sudo mysql -u root -p
+	-> ingresamos contraseña
+	create user 'krejas'@'localhost' IDENTIFIED WITH mysql_native_password BY '28keller';
+	GRANT ALL PRIVILEGES ON * . * TO 'krejas'@'localhost';
+	flush privileges;
