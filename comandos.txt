@@ -1,0 +1,55 @@
+sudo apt update
+sudo hostnamectl set-hostname servervalerius
+sudo reboot
+sudo apt install apache2
+sudo apt install mysql-server
+sudo apt install php libapache2-mod-php php-mysql
+sudo apt install phpmyadmin
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+sudo a2enconf phpmyadmin
+sudo systemctl restart apache2
+sudo su
+--passwd root
+--12345
+--12345
+exit
+sudo mysql_secure_installation
+N - Y - N - Y - Y
+sudo mysql -u root
+exit
+sudo mysql -u root -p
+--malasquez
+CREATE USER 'keller'@'localhost' IDENTIFIED BY '1234567890';
+GRANT ALL PRIVILEGES ON * . * TO 'keller'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+
+
+
+
+1. `sudo apt update`: se usa para actualizar la lista de paquetes disponibles en el sistema.
+2. `sudo hostnamectl set-hostname servervalerius`: se usa para cambiar el nombre del host del sistema a "servervalerius".
+3. `sudo reboot`: se usa para reiniciar el sistema.
+4. `sudo apt install apache2`: se usa para instalar el servidor web Apache.
+5. `sudo apt install mysql-server`: se usa para instalar el servidor de base de datos MySQL.
+6. `sudo apt install php libapache2-mod-php php-mysql`: se usa para instalar PHP y los módulos necesarios para que Apache pueda usar PHP y MySQL.
+7. `sudo apt install phpmyadmin`: se usa para instalar la herramienta de administración de bases de datos phpMyAdmin.
+8. `sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf`: se usa para crear un enlace simbólico entre la configuración de phpMyAdmin y la configuración de Apache.
+9. `sudo a2enconf phpmyadmin`: se usa para habilitar la configuración de phpMyAdmin en Apache.
+10. `sudo systemctl restart apache2`: se usa para reiniciar el servidor web Apache.
+11. `sudo su`: se usa para cambiar al usuario root.
+12. `--passwd root`: se usa para cambiar la contraseña del usuario root.
+13. `--1234567890`: se ingresa la nueva contraseña para el usuario root.
+14. `--1234567890`: se repite la nueva contraseña para el usuario root.
+15. `exit`: se usa para salir del usuario root.
+16. `sudo mysql_secure_installation`: se usa para asegurar la instalación de MySQL.
+17. `N - Y - N - Y - Y`: se responden las preguntas de seguridad de MySQL durante la instalación segura.
+18. `sudo mysql -u root`: se usa para iniciar sesión en MySQL como usuario root.
+19. `exit`: se usa para salir de MySQL.
+20. `sudo mysql -u root -p`: se usa para iniciar sesión en MySQL como usuario root con una contraseña.
+21. `--malasquez`: se ingresa la contraseña del usuario root.
+22. `CREATE USER 'keller'@'localhost' IDENTIFIED BY 'malasquez';`: se crea un nuevo usuario llamado "keller" con la contraseña "malasquez".
+23. `GRANT ALL PRIVILEGES ON * . * TO 'keller'@'localhost';`: se otorgan todos los permisos al usuario "keller" en todas las bases de datos del sistema.
+24. `FLUSH PRIVILEGES;`: se actualizan los permisos en MySQL.
+25. `EXIT;`: se cierra la sesión de MySQL.
